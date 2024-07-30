@@ -1,0 +1,19 @@
+<h2>Productos</h2>
+<div class="d-grid gap-2 p-1">
+    <a href="/api/productos/create" class="btn btn-primary" type="button">Nuevo producto</a>
+</div>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  {{#each productos}}  
+    <div class="col">
+      <div class="card">
+        <img src="/img/productos/{{this.imagen}}" class="card-img-top" alt="{{this.imagen}}">
+         <div class="card-body text-center">
+         <h5 class="card-title">{{this.precio}}</h5>
+        <p class="card-text">{{this.nombre}}</p>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+   

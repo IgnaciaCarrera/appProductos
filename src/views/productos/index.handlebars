@@ -1,19 +1,21 @@
-<h2>Productos</h2>
 <div class="d-grid gap-2 p-1">
     <a href="/api/productos/create" class="btn btn-primary" type="button">Nuevo producto</a>
 </div>
-
 <div class="row row-cols-1 row-cols-md-2 g-4">
-  {{#each productos}}  
+  {{#each productos}} 
     <div class="col">
-      <div class="card">
-        <img src="/img/productos/{{this.imagen}}" class="card-img-top" alt="{{this.imagen}}">
-         <div class="card-body text-center">
-         <h5 class="card-title">{{this.precio}}</h5>
-        <p class="card-text">{{this.nombre}}</p>
+        <div class="card text-center">
+            <img src="/img/{{this.imagen}}" class="card-img-top" alt="{{this.nombre}}">
+            <div class="card-body">
+                <h5 class="card-title">{{this.precio}}</h5>
+                <p class="card-text">{{this.nombre}}</p>
+            </div>
+             <div class="d-grid gap-2 p-1">
+                <a href="/api/productos/editar/{{this.producto_id}}" class="btn btn-warning" type="button">Editar</a>
+            </div>
+            <button type="button" data-index-number="{{this.producto_id}}" class="btn btn-danger btnEliminarProducto">Eliminar</button>
         </div>
-      </div>
     </div>
-  {{/each}}
+    {{/each}}
 </div>
-   
+<script src="/js/eliminarProducto.js"></script>
